@@ -12,21 +12,38 @@ import {
   View
 } from 'react-native';
 
+import { Router, Scene, Actions, ActionConst } from 'react-native-router-flux';
+
+import Splash from './src/pages/Splash';
+import HomeScreen from './src/pages/HomeScreen';
+import Container from './src/components/Container';
+
 export default class MyQuickTask extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
-      </View>
+       
+      
+        <Router>
+
+          <Scene key="root">
+
+            <Scene key="Splash"
+              component={Splash}
+              animation='fade'
+              initial={true}
+              hideNavBar={true}
+            />
+
+            <Scene key="HomeScreen"
+              component={HomeScreen}
+              animation='fade'
+              initial={false}
+              hideNavBar={true}
+            />
+          </Scene>
+        </Router>
+       
+
     );
   }
 }
