@@ -75,10 +75,10 @@ export default class HomeScreen extends Component {
 
     return (
       <Swipeout right={swipeBtns}
-        autoClose='true'
+        autoClose={true}
         backgroundColor= 'transparent'>
         <TouchableHighlight
-          underlayColor='rgba(192,192,192,1,0.6)'
+          underlayColor='rgba(192,192,192,0.6)'
            >
           <View>
             <View style={styles.rowContainer}>
